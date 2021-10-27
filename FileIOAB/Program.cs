@@ -16,6 +16,7 @@ namespace FileIOAB
             FileReadWriteOperation file = new FileReadWriteOperation();
             file.FilExists(path);
             file.ReadAllLinesInFile();
+            file.ReadAllTextInFile();
             Console.ReadLine();
         }
     }
