@@ -15,8 +15,7 @@ namespace FileIOAB
             string path = @"C:\Users\OmSaiRam\Downloads\Practicals\FileIOAB\FileIOAB\FileIO\Sample.txt";
             FileReadWriteOperation file = new FileReadWriteOperation();
             file.FilExists(path);
-            file.ReadAllLinesInFile();
-            file.ReadAllTextInFile();
+            file.CopyMethod(path);
             Console.ReadLine();
         }
     }
