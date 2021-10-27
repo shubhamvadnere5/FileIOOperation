@@ -30,7 +30,7 @@ namespace FileIOAB.FileIO
             try
             {
                 string[] lines;
-                string path = @"C: \Users\OmSaiRam\Downloads\Practicals\FileIOAB\FileIOAB\FileIO\Sample.txt";
+                string path = @"C:\Users\OmSaiRam\Downloads\Practicals\FileIOAB\FileIOAB\FileIO\Sample.txt";
                 //Reads all lines in file one by one 
                 lines = File.ReadAllLines(path);
                 if (lines.Length != 0)
@@ -101,6 +101,30 @@ namespace FileIOAB.FileIO
                 else
                 {
                     Console.WriteLine("File not found!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        // Read from stream reader class-reads a file content one line at a time and displayed it.
+        public void ReadFromStreamReader()
+        {
+            string streamRead = @"C:\Users\OmSaiRam\Downloads\Practicals\FileIOAB\FileIOAB\FileIO\Sample.txt";
+            try
+            {
+                //using keyword is for directing object to garbage collection
+                using (StreamReader reader = new StreamReader(streamRead))
+                {
+                    string line;
+                    Console.WriteLine("Read the file from stream reader class");
+                    while ((line = reader.ReadLine()) != null)
+                    {
+
+                        Console.WriteLine(line);
+                    }
                 }
             }
             catch (Exception ex)
