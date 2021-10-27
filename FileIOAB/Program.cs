@@ -14,7 +14,7 @@ namespace FileIOAB
             Console.WriteLine("Welcome to File IO Operations");
             string path = @"C:\Users\OmSaiRam\Downloads\Practicals\FileIOAB\FileIOAB\FileIO\Sample.txt";
             FileReadWriteOperation file = new FileReadWriteOperation();
-            file.ReadFromStreamReader();
+            file.WriteUsingStreamWriter();
             Console.ReadLine();
         }
     }

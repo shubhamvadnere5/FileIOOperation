@@ -132,5 +132,33 @@ namespace FileIOAB.FileIO
                 Console.WriteLine(ex.Message);
             }
         }
+
+        //Write in a file using stream writer class
+        public void WriteUsingStreamWriter()
+        {
+            string streamWritePath = @"C:\Users\OmSaiRam\Downloads\Practicals\FileIOAB\FileIOAB\FileIO\Sample.txt";
+            FileStream stream = null;
+            try
+            {
+                stream = new FileStream(streamWritePath, FileMode.OpenOrCreate);
+                using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
+                {
+                    writer.WriteLine("Hello World");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    stream.Dispose(); //release all resources
+                }
+            }
+            string readText = File.ReadAllText(streamWritePath);
+            Console.WriteLine(readText);
+        }
     }
 }
